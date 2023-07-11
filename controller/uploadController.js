@@ -7,7 +7,7 @@ const uploadFile = async (req, res) => {
 
     const fileData = {
         path: req.file.path,
-        oringinalName: req.file.oringinalname,
+        originalName: req.file.originalname,
     }
 
     if (req.body.password != null && req.body.password != '') {

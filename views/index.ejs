@@ -1,25 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <% if (locals.fileLink != null) { %>
-        <div style="margin: 1rem auto; max-width: 500px;">
-          Your file is upload
-          <a href="<%= locals.fileLink %>"><%= locals.fileLink %></a>
-        </div>
-      <% } %>
-    <form action="/upload" method="post"  style="display: grid; gap: 5rem; grid-template-columns: auto 1fr; max-width: 500px; margin: 0 auto;" enctype="multipart/form-data">
-        <label for="file">File:</label >
-        <input type="file" id="file" name="file"  required />
-        
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password"  />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FileSharingApp</title>
 
-        <button type="submit" style="grid-column: span 2;">Share</button>
-    </form>
-</body>
+    <style>
+      /* Reset default browser styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+/* Container styles */
+.container {
+  max-width: 500px;
+  margin: 1rem auto;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* File link styles */
+.file-link {
+  display: block;
+  margin-bottom: 1rem;
+  color: #333333;
+  text-decoration: none;
+}
+
+/* Form styles */
+form {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: auto 1fr;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Label styles */
+label {
+  font-weight: bold;
+  color: #333333;
+}
+
+/* Input styles */
+input[type="file"],
+input[type="password"] {
+  padding: 0.5rem;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  background-color: #f8f8f8;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input[type="file"]:focus,
+input[type="password"]:focus {
+  border-color: #999999;
+}
+
+/* Button styles */
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 3px;
+  background-color: #3366cc;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #235daa;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container" style="border: 1rem;">
+      <% if (locals.fileLink != null) { %>
+      <div style="margin: 1rem auto; max-width: 500px">
+        Your file is upload
+        <a href="<%= locals.fileLink %>"><%= locals.fileLink %></a>
+      </div>
+      <% } %>
+      <form
+        action="/upload"
+        method="post"
+        style="
+          display: grid;
+          gap: 5rem;
+          grid-template-columns: auto 1fr;
+          max-width: 500px;
+          margin: 0 auto;
+        "
+        class="container"
+        enctype="multipart/form-data"
+      >
+        <label for="file">File:</label>
+        <input type="file" id="file" name="file" required />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" />
+
+        <button type="submit" style="grid-column: span 2">Share</button>
+      </form>
+    </div>
+  </body>
 </html>
