@@ -3,96 +3,95 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>FileSharingApp</title>
 
     <style>
-      /* Reset default browser styles */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+      Reset default browser styles * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-/* Body styles */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
-}
+      /* Body styles */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+      }
 
-/* Container styles */
-.container {
-  max-width: 500px;
-  margin: 1rem auto;
-  padding: 1rem;
-  background-color: #ffffff;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+      /* Container styles */
+      .container {
+        max-width: 500px;
+        margin: 1rem auto;
+        padding: 1rem;
+        background-color: #ffffff;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
 
-/* File link styles */
-.file-link {
-  display: block;
-  margin-bottom: 1rem;
-  color: #333333;
-  text-decoration: none;
-}
+      /* File link styles */
+      .file-link {
+        display: block;
+        margin-bottom: 1rem;
+        color: #333333;
+        text-decoration: none;
+      }
 
-/* Form styles */
-form {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: auto 1fr;
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 1rem;
-  background-color: #ffffff;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+      /* Form styles */
+      form {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: auto 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 1rem;
+        background-color: #ffffff;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
 
-/* Label styles */
-label {
-  font-weight: bold;
-  color: #333333;
-}
+      /* Label styles */
+      label {
+        font-weight: bold;
+        color: #333333;
+      }
 
-/* Input styles */
-input[type="file"],
-input[type="password"] {
-  padding: 0.5rem;
-  border: 1px solid #cccccc;
-  border-radius: 3px;
-  background-color: #f8f8f8;
-  outline: none;
-  transition: border-color 0.3s ease;
-}
+      /* Input styles */
+      input[type="file"],
+      input[type="password"] {
+        padding: 0.5rem;
+        border: 1px solid #cccccc;
+        border-radius: 3px;
+        background-color: #f8f8f8;
+        outline: none;
+        transition: border-color 0.3s ease;
+      }
 
-input[type="file"]:focus,
-input[type="password"]:focus {
-  border-color: #999999;
-}
+      input[type="file"]:focus,
+      input[type="password"]:focus {
+        border-color: #999999;
+      }
 
-/* Button styles */
-button {
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 3px;
-  background-color: #3366cc;
-  color: #ffffff;
-  font-weight: bold;
-  cursor: pointer;
-  outline: none;
-  transition: background-color 0.3s ease;
-}
+      /* Button styles */
+      button {
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 3px;
+        background-color: #3366cc;
+        color: #ffffff;
+        font-weight: bold;
+        cursor: pointer;
+        outline: none;
+        transition: background-color 0.3s ease;
+      }
 
-button:hover {
-  background-color: #235daa;
-}
-
+      button:hover {
+        background-color: #235daa;
+      }
     </style>
   </head>
   <body>
-    <div class="container" style="border: 1rem;">
+    <div class="container" style="border: 1rem">
       <% if (locals.fileLink != null) { %>
       <div style="margin: 1rem auto; max-width: 500px">
         Your file is upload
@@ -109,7 +108,6 @@ button:hover {
           max-width: 500px;
           margin: 0 auto;
         "
-        class="container"
         enctype="multipart/form-data"
       >
         <label for="file">File:</label>
